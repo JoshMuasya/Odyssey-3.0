@@ -10,7 +10,7 @@ module.exports = {
       black: '#000',
       white: '#FFF',
       brown: '#591D0C',
-      lightorange: '#FAA626'
+      yellow: '#FAA626'
     },
     fontSize: {
       's': '16px',
