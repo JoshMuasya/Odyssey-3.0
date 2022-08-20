@@ -5,7 +5,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 const Navbar = () => {
     const [nav, setNav] = useState(false)
     const [color, setColor] = useState('transparent')
-    const [textColor, setTextColor] = useState('white')
+    const [textColor, setTextColor] = useState('orange')
 
     const handleNav = () => {
         setNav(!nav);
@@ -14,11 +14,11 @@ const Navbar = () => {
     useEffect(() => {
         const changeColor = () => {
             if (window.scrollY >= 90) {
-                setColor('#ffffff');
-                setTextColor('#000000');
+                setColor('#ffffff70');
+                setTextColor('#591D0C');
             } else {
                 setColor('transparent');
-                setTextColor('#ffffff');
+                setTextColor('orange');
             }
         };
         window.addEventListener('scroll', changeColor);
@@ -31,19 +31,19 @@ const Navbar = () => {
                 <h1 className='font-bold text-xxl'>Logo</h1>
             </Link>
             <ul style= {{color:`${textColor}`}} className='hidden sm:flex'>
-                <li className='p-4'>
+                <li className='p-4 font-bold'>
                     <Link href='/'>Home</Link>
                 </li>
-                <li className='p-4'>
+                <li className='p-4 font-bold'>
                     <Link href='/about'>About</Link>
                 </li>
-                <li className='p-4'>
+                <li className='p-4 font-bold'>
                     <Link href='/gallery'>Gallery</Link>
                 </li>
-                <li className='p-4'>
+                <li className='p-4 font-bold'>
                     <Link href='/blog'>Blog</Link>
                 </li>
-                <li className='p-4'>
+                <li className='p-4 font-bold'>
                     <Link href='/contact'>Contact</Link>
                 </li>
             </ul>
