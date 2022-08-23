@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import About from '../components/about'
-import Hero from '../components/Hero'
+import Head from 'next/head';
+import Image from 'next/image';
+import Gallery from '../components/Gallery';
+import Hero from '../components/Hero';
+import { GalleryData } from '../components/GalleryData';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero heading='Odyssey Africa Hikes' slogan='Travel in Style'/>
-      <About />
+      <Gallery slides={GalleryData} />
     </div>
   )
 }
