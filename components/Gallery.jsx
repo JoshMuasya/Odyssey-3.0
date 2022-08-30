@@ -21,7 +21,8 @@ const Gallery = ({slides}) => {
 
 
   return (
-    <div id='gallery' className='flex justify-center align-center flex-col items-center m-0 p-0'>
+    <div id='gallery' 
+    className='flex justify-center align-center flex-col items-center m-0 p-0'>
         <h2 className='font-Quicksand text-center text-xl bg-yellow w-fit rounded-full p-5 m-5 text-white font-bold'>
             Make Memories with Us
         </h2>

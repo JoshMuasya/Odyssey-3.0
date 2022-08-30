@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div className='bg-black flex flex-col justify-center align-center items-center p-10'>
       <Link href='/'>
-        <BiArrowToTop size={50} className='text-yellow cursor-pointer select-none' />
+        <BiArrowToTop size={50} className='text-yellow hover:text-white cursor-pointer select-none' />
       </Link>
       <h3 className='text-l text-white font-Quicksand '>
         Tel: +254 20 521 0324
