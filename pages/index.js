@@ -6,6 +6,7 @@ import { GalleryData } from '../components/GalleryData';
 import Contact from '../components/Contact';
 import Find from '../components/Find';
 import About from '../components/About';
+import Blog from '../components/Blog';
 
 export default function Home() {
   return (
@@ -17,9 +18,9 @@ export default function Home() {
       </Head>
       <Hero heading='Odyssey Africa Hikes' slogan='Travel in Style'/>
       <About />
+      <Blog />
       <Gallery slides={GalleryData} />
       <Find />
-      <Contact />
     </div>
   )
 }

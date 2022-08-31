@@ -11,7 +11,8 @@ module.exports = {
       white: '#FFF',
       brown: '#591D0C',
       yellow: '#FAA626',
-      dbrown: '#3d2b1f'
+      dbrown: '#3d2b1f',
+      borange: '#f3742e'
     },
     fontSize: {
       's': '16px',

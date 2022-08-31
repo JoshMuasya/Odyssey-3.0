@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 
 const Hero = ({ heading, slogan }) => {
   return (
@@ -10,10 +11,16 @@ const Hero = ({ heading, slogan }) => {
         <div className='p-10 text-white z-[2] text-center'>
             <h3 className='font-Titillium-Web italic text-lg text-orange'>{ slogan }</h3>
             <h2 className='font-Quicksand font-bold text-xxl text-white my-5'>{ heading }</h2>
-            <button className='px-4 py-3 border border-yellow rounded-2xl mx-5 font-bold
-            hover:border-0 hover:text-yellow'>About Us</button>
-            <button className='px-4 py-3 rounded-2xl mx-5 bg-yellow text-white
-             hover:bg-white hover:text-yellow font-bold'>Contact Us</button>
+
+            <Link href='#about'>
+              <button className='px-4 py-3 border border-yellow rounded-2xl mx-5 font-bold
+              hover:border-0 hover:text-yellow'>About Us</button>
+            </Link>
+
+            <Link href='#contact'>
+              <button className='px-4 py-3 rounded-2xl mx-5 bg-yellow text-white
+              hover:bg-white hover:text-yellow font-bold'>Contact Us</button>
+            </Link>
         </div>
     </div>
   )
