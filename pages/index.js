@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Gallery from '../components/Gallery';
 import Hero from '../components/Hero';
 import { GalleryData } from '../components/GalleryData';
-import Contact from '../components/Contact';
 import Find from '../components/Find';
 import About from '../components/About';
 import Blog from '../components/Blog';
