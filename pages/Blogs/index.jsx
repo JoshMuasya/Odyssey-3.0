@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '@sanity/client';
+import { useNextSanityImage } from 'next-sanity-image';
 
-const index = ({ title, link, img }) => {
+const index = ({ blogs }) => {
 
     const client = sanityClient({
         projectId: '850mi9gd',
@@ -13,13 +14,13 @@ const index = ({ title, link, img }) => {
         useCdn: false, // `false` if you want to ensure fresh data
     });
 
-    const [imageUrl, setImageUrl] = useState('');
+    // const [imageUrl, setImageUrl] = useState('');
 
-    useEffect(() => {
-        const imgBuilder = imageUrlBuilder (client);
+    // useEffect(() => {
+    //     const imgBuilder = imageUrlBuilder (client);
 
-        setImageUrl(imgBuilder.image(img));
-    }, []);
+    //     setImageUrl(imgBuilder.image(img));
+    // }, []);
 
   return (
     <div className='flex flex-col justify-center align-center items-center m-10 min-h-fit'>
@@ -37,17 +38,31 @@ const index = ({ title, link, img }) => {
 
         <div>
             <ul>
-                <Link href='{`/blog/`}'>
-                    <li>
+                {blogs.map(post => {
+                    console.log(post.mainImage.asset._ref)
+ 
+                    return (
+                        <li key={post._id}>
+                            <h3>
+                                { post.title }
+                            </h3>
+                            
+                            
+                            <img src={ post.mainImage.asset._ref } 
+                            alt=""
+                            width="100%"
+                            />
+                        </li>
+                    )
+                }                        
+                )}
+                {/* <Link href='{`/blog/`}'>
+                    <li key={title._id}>
                         <h4>
                             {title}
                         </h4>
                     </li>
-                </Link>
-
-                <Link href=''> 
-                    <li>Blog 2</li> 
-                </Link>
+                </Link> */}
             </ul>
         </div>
     </div>
@@ -60,26 +75,28 @@ export const getServerSideProps = async blogList => {
 
     const result = await fetch(url).then(res => res.json());
     const blogs = result.result;
-    
-    let blogTitle = blogs.map(function(element) {
-        return `${element.title} ${element.slug.current}`;
-    });
-    
-    let slug = blogs.map(function(element) {
-        return `${element.slug.current}`;
-    });
-
-    let image = blogs.map(function(element) {
-        return `${element.mainImage.asset._ref}`;
-    });
-    
-    return{
+    return {
         props: {
-            title: blogTitle,
-            link: slug,
-            img: image,
+            blogs
         }
     }
+    
+    
+    // let slug = blogs.map(function(element) {
+    //     return `${element.slug.current}`;
+    // });
+
+    // let image = blogs.map(function(element) {
+    //     return `${element.mainImage.asset._ref}`;
+    // });
+    
+    // return{
+    //     props: {
+    //         title: blogTitle,
+    //         link: slug,
+    //         img: image,
+    //     }
+    // }
 };
 
 export default index;

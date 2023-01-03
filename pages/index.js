@@ -1,9 +1,7 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Gallery from '../components/Gallery';
 import Hero from '../components/Hero';
 import { GalleryData } from '../components/GalleryData';
-import Find from '../components/Find';
 import About from '../components/About';
 import Blog from '../components/Blog';
 
@@ -19,7 +17,7 @@ export default function Home() {
       <About />
       <Blog />
       <Gallery slides={GalleryData} />
-      <Find />
+      {/* <Find /> */}
     </div>
   )
 }

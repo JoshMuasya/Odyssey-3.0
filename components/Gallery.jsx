@@ -23,10 +23,11 @@ const Gallery = ({slides}) => {
   return (
     <div id='gallery' 
     className='flex justify-center align-center flex-col items-center m-0 p-0'>
-        <h2 className='font-Quicksand text-center text-xl bg-yellow w-fit rounded-full p-5 m-5 text-white font-bold'>
+        <h2 className='font-Quicksand text-center text-m bg-yellow w-fit rounded-full p-1 m-5 text-white font-bold
+        lg:text-lg'>
             Make Memories with Us
         </h2>
-        <div className='relative flex justify-center'>
+        <div className='relative flex justify-center w-fit'>
             {GalleryData.map((slide, index) => {
                 return (
                     <div 
@@ -38,20 +39,24 @@ const Gallery = ({slides}) => {
                         }
                     >
                         <FaArrowCircleLeft onClick={prevSlide}
-                        className='absolute top-[50%] left-[30px] text-yellow/70 cursor-pointer select-none z-[2]'
-                        size={50} />
+                        className='absolute top-[50%] left-[5px] text-yellow/70 cursor-pointer select-none z-[2] text-m
+                        md:text-l
+                        lg:text-xl'
+                        />
                         {index === current && (
                             <Image 
                             src={slide.image} 
                             alt='/' 
                             width='1366' 
-                            height='600' 
+                            height='900' 
                             objectFit='cover' 
                         />
                         )}
                         <FaArrowCircleRight onClick={nextSlide}
-                        className='absolute top-[50%] right-[30px] text-yellow/70 cursor-pointer select-none z-[2]'
-                        size={50} />
+                        className='absolute top-[50%] right-[5px] text-yellow/70 cursor-pointer select-none z-[2] text-m
+                        md:text-l
+                        lg:text-xl'
+                        />
                     </div>
                 );
             })}
