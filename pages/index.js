@@ -3,7 +3,9 @@ import Gallery from '../components/Gallery';
 import Hero from '../components/Hero';
 import { GalleryData } from '../components/GalleryData';
 import About from '../components/About';
-import Blog from '../components/Blog';
+// import Blog from '../components/Blog';
+import Find from '../components/Find';
+import Scholarship from '../components/Scholarship';
 
 export default function Home() {
   return (
@@ -15,9 +17,10 @@ export default function Home() {
       </Head>
       <Hero heading='Odyssey Africa Hikes' slogan='Travel in Style'/>
       <About />
-      <Blog />
+      {/* <Blog /> */}
+      <Scholarship />
       <Gallery slides={GalleryData} />
-      {/* <Find /> */}
+      <Find />
     </div>
   )
 }

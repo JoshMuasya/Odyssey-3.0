@@ -2,14 +2,18 @@
   "name": "odyssey-3.0",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://odysseyafricahikes.com",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.11",
     "@sanity/block-content-to-react": "3.0.0",
     "@sanity/cli": "^2.31.1",
     "@sanity/client": "^3.4.1",
